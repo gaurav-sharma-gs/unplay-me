@@ -1,0 +1,44 @@
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    /* macOS Big Sur / Monterey inspired abstract gradient */
+    background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23fa709a'/%3E%3Cstop offset='100%25' stop-color='%23fee140'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3C/svg%3E");
+    background:
+        radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.appGrid {
+    padding: 60px 20px 20px;
+    /* Top padding for status bar */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-content: start;
+    height: 100%;
+    flex: 1;
+}
+
+.terminalContainer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .appGrid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 40px;
+        padding: 80px 40px 40px;
+    }
+}

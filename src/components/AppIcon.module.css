@@ -1,0 +1,42 @@
+.appIconContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 80px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.appIconContainer:hover {
+    transform: scale(1.1);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.initial {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.name {
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
