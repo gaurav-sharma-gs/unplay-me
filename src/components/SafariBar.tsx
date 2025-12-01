@@ -7,7 +7,7 @@ export default function SafariBar() {
     return (
         <div className={styles.safariBar}>
             <div className={styles.trafficLights}>
-                <div className={`${styles.light} ${styles.red}`}></div>
+                <Link href="/" className={`${styles.light} ${styles.red}`}></Link>
                 <div className={`${styles.light} ${styles.yellow}`}></div>
                 <div className={`${styles.light} ${styles.green}`}></div>
             </div>

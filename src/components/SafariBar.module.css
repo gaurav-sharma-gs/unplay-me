@@ -29,6 +29,30 @@
 
 .red {
     background-color: #FF5F56;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.red::before {
+    content: '×';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: #4d0000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red:hover::before {
+    opacity: 1;
 }
 
 .yellow {
