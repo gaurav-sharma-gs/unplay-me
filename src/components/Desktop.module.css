@@ -1,21 +1,10 @@
 .desktop {
     width: 100vw;
     height: 100vh;
-    background:
-        radial-gradient(ellipse 1200px 800px at 100% 30%,
-            rgba(255, 20, 100, 0.7) 0%,
-            rgba(220, 38, 127, 0.5) 25%,
-            transparent 45%),
-        radial-gradient(ellipse 900px 1100px at 0% 25%,
-            rgba(0, 150, 255, 0.6) 0%,
-            rgba(30, 144, 255, 0.4) 20%,
-            transparent 40%),
-        radial-gradient(ellipse 1000px 900px at 100% 100%,
-            rgba(0, 255, 255, 0.7) 0%,
-            rgba(0, 230, 255, 0.5) 20%,
-            rgba(0, 200, 255, 0.3) 35%,
-            transparent 50%),
-        #000000;
+    background-image: url('/image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
     display: flex;
