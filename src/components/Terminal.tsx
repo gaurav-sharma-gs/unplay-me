@@ -8,8 +8,7 @@ const COMMANDS = {
   Info: resume, skills, contact, github, linkedin, about, whoami
   Files: ls, pwd
   Actions: open <app>
-  Utils: help, man <cmd>, history, echo <text>, clear, date
-  System: uname [-a], uptime, id, who, ps`,
+  Utils: help, man <cmd>, history, echo <text>, clear, date`,
     whoami: 'gaurav.sh.jpr@gmail.com',
     ls: 'MissAnime  CaFinder  CrunchySkip',
     about: 'Full-stack developer (kinda - Backend first full-stack) passionate about building interactive web experiences. Welcome to my digital playground!',
@@ -100,15 +99,7 @@ A web application that helps users discover and locate coffee shops in their are
 A Chrome extension that automatically skips intros and outros on Crunchyroll, enhancing the anime watching experience.`,
 };
 
-const SYSTEM_INFO = {
-    uname: 'Darwin unplay.me 24.0.0 Darwin Kernel Version 24.0.0: Mon Dec 1 00:00:00 PST 2025; root:xnu-10000.0.0~1/RELEASE_ARM64_T6000 arm64',
-    uptime: ' 10:00:00 up 1 day, 1 user, load averages: 1.41 1.56 1.57',
-    id: 'uid=501(gaurav) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),80(admin),98(_lpadmin),701(com.apple.sharepoint.group.1)',
-    who: 'gaurav   console  Dec 1 09:00',
-    ps: `  PID TTY           TIME CMD
- 1337 ttys000    0:00.05 /bin/zsh
- 2025 ttys000    0:00.01 ./unplay-os`,
-};
+
 
 const MAN_PAGES = {
     help: 'Display available commands grouped by category',
@@ -127,11 +118,6 @@ const MAN_PAGES = {
     echo: 'Print text to terminal. Usage: echo <text>',
     clear: 'Clear the terminal screen',
     date: 'Display current date and time',
-    uname: 'Print system information',
-    uptime: 'Show how long system has been running',
-    id: 'Print user and group IDs',
-    who: 'Show who is logged on',
-    ps: 'Report a snapshot of the current processes',
 };
 
 export default function Terminal() {
@@ -173,15 +159,7 @@ export default function Terminal() {
             case 'resume':
                 output = COMMANDS[command];
                 break;
-            case 'uname':
-                output = args.includes('-a') ? SYSTEM_INFO.uname : 'Darwin';
-                break;
-            case 'uptime':
-            case 'id':
-            case 'who':
-            case 'ps':
-                output = SYSTEM_INFO[command];
-                break;
+
             case 'date':
                 output = new Date().toString();
                 break;
@@ -282,7 +260,7 @@ export default function Terminal() {
                     <div key={i} className={styles.line}>{line}</div>
                 ))}
                 <div className={styles.inputLine}>
-                    <span className={styles.prompt}>gaurav@unplay.me ~ %</span>
+                    <span className={styles.prompt}>{'>'}</span>
                     <input
                         ref={inputRef}
                         type="text"
